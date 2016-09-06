@@ -3,7 +3,7 @@
     <label for="all">
       <input
 			value="-1"
-			change="changeFilter"
+			@change="changeFilter"
 			id="all"
 			type="radio"
 			name="todoFilter"
@@ -14,7 +14,7 @@
     <label for="toggled">
 			<input
 			value="true"
-			change="changeFilter"
+			@change="changeFilter"
 			id="toggled"
 			type="radio"
 			name="todoFilter"
@@ -25,7 +25,7 @@
     <label for="untoggled">
 			<input
 			value="false"
-			change="changeFilter"
+			@change="changeFilter"
 			id="untoggled"
 			type="radio"
 			name="todoFilter"
