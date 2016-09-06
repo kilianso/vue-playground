@@ -34,6 +34,7 @@
 				addTodo: function({ dispatch }) {
 					dispatch('ADD_TODO', {
 						todo:{
+							id: Math.floor(Math.random() * 999) + 100,
 							text: this.newTodo,
 							toggled: false
 						}

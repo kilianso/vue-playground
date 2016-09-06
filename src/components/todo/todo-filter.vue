@@ -18,7 +18,7 @@
 			id="toggled"
 			type="radio"
 			name="todoFilter"
-			v-bind:checked="activeFilter==-true"
+			v-bind:checked="activeFilter==true"
 			/>
 			<span>toggled</span>
 		</label>
@@ -29,9 +29,9 @@
 			id="untoggled"
 			type="radio"
 			name="todoFilter"
-			v-bind:checked="activeFilter==-false"
+			v-bind:checked="activeFilter==false"
 			/>
-			<span>unoggled</span>
+			<span>untoggled</span>
     </label>
   </p>
 </template>

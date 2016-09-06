@@ -3,7 +3,7 @@ export default {
 	//inital state
 	state:{
 		todos: [],
-		activeFilter: -1
+		activeFilter: -1,
 	},
 	//function to modify state
 	mutations:{
@@ -13,6 +13,13 @@ export default {
 		},
 		CHANGE_FILTER: function(state, action){
 			state.activeFilter = action.activeFilter;
+		},
+		TOGGLE_TODO: function(state, action){
+			for(var i=0; i < state.todos.length; i++) {
+				if(state.todos[i].id == action){
+					state.todos[i].toggled = !state.todos[i].toggled
+				}
+			}
 		}
 	}
 }
