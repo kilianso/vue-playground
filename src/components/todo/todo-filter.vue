@@ -2,59 +2,56 @@
   <p>
     <label for="all">
       <input
-			value="-1"
-			@change="changeFilter"
-			id="all"
-			type="radio"
-			name="todoFilter"
-			v-bind:checked="activeFilter==-1"
-			/>
-			<span>all</span>
+        value="-1"
+        v-bind:checked="activeFilter==-1"
+        v-on:change="changeFilter"
+        id="all"
+        type="radio"
+        name="todoFilter"
+      />
+      <span>all</span>
     </label>
     <label for="toggled">
-			<input
-			value="true"
-			@change="changeFilter"
-			id="toggled"
-			type="radio"
-			name="todoFilter"
-			v-bind:checked="activeFilter==true"
-			/>
-			<span>toggled</span>
-		</label>
+      <input type="radio"
+        value="true"
+        v-bind:checked="activeFilter==true"
+        v-on:change="changeFilter"
+        id="toggled"
+        name="todoFilter"
+      />
+      <span>toggled</span>
+    </label>
     <label for="untoggled">
-			<input
-			value="false"
-			@change="changeFilter"
-			id="untoggled"
-			type="radio"
-			name="todoFilter"
-			v-bind:checked="activeFilter==false"
-			/>
-			<span>untoggled</span>
+      <input
+        value="false"
+        v-bind:checked="activeFilter==false"
+        v-on:change="changeFilter"
+        id="untoggled"
+        name="todoFilter"
+        type="radio"
+      />
+      <span>untoggled</span>
     </label>
   </p>
 </template>
 
 <script>
   import Vue from 'vue';
-
   export default Vue.extend({
-		vuex:{
-			getters:{
-				activeFilter: function(state){
-					return state.todos.activeFilter;
-				}
-			},
-			actions:{
-				// ES6 Deconstructor
-				changeFilter: function({ dispatch }, e) {
-					dispatch('CHANGE_FILTER', {
-						activeFilter: JSON.parse(e.target.value),
-					});
-				}
-			}
-		}
+    vuex: {
+      getters: {
+        activeFilter: function (state) {
+          return state.todos.activeFilter;
+        }
+      },
+      actions: {
+        changeFilter: function ({ dispatch }, e) {
+          dispatch('CHANGE_FILTER', {
+            activeFilter: JSON.parse(e.target.value),
+          });
+        }
+      }
+    }
   });
 </script>
 
