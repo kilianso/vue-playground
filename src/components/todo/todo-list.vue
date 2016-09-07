@@ -27,11 +27,11 @@
 			getters:{
 				todos: function(state){
 					return state.todos.todos;
+				},
+				activeFilter: function (state){
+					return state.todos.activeFilter;
 				}
 			},
-			activeFilter: function (state){
-				return state.todos.activeFilter;
-			}
 		}
   });
 </script>
